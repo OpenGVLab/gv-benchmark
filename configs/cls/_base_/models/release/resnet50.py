@@ -1,0 +1,27 @@
+model = dict(type='ImageClassifier',
+             backbone=dict(type='ResNet',
+                           depth=50,
+                           frozen_stages=4,
+                           num_stages=4,
+                           out_indices=(3, ),
+                           style='pytorch',
+                           return_tuple=False,
+                           init_cfg=dict(
+                               type='Pretrained',
+                               checkpoint='checkpoints/up-e/c-r50.pth',
+                           )),
+             neck=dict(type='GlobalAveragePooling'),
+             head=dict(
+                 type='LinearClsHead',
+                 num_classes=1000,
+                 in_channels=2048,
+                 init_cfg=dict(
+                     type='Kaiming',
+                     a=2.23606,
+                     mode='fan_out',
+                     nonlinearity='relu',
+                     distribution='uniform',
+                 ),
+                 loss=dict(type='CrossEntropyLoss', loss_weight=1.0),
+                 topk=(1, 5),
+             ))
