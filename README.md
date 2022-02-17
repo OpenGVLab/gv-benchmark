@@ -51,7 +51,7 @@ c. Install openmm package via pip (mmcls, mmdet, mmseg)：
 ```shell
 pip install mmcls
 pip install mmdet
-pip install mmsegmetation
+pip install mmsegmentation
 ```
 
 
@@ -66,20 +66,24 @@ For each evaluation task, you can follow the official repo tutorial for data pre
 
 [mmclassification](https://github.com/open-mmlab/mmclassification/blob/master/docs/zh_CN/getting_started.md)
 
-[mmdetection](https://github.com/open-mmlab/mmdetection/blob/master/docs/zh_cn/get_started.md)
+[mmdetection](https://github.com/open-mmlab/mmdetection/blob/master/docs/zh_cn/1_exist_data_model.md)
 
-[mmsegmentation](https://github.com/open-mmlab/mmsegmentation/blob/master/docs/zh_cn/get_started.md)
+[mmsegmentation](https://github.com/open-mmlab/mmsegmentation/blob/master/docs/zh_cn/dataset_prepare.md)
 
 
 ## Model evaluation
 
 We use [MIM](https://github.com/open-mmlab/mim) to submit evaluation in GV-B.
 
-a.If you run MMClassification on a cluster managed with slurm, you can use the script mim_slurm_train.sh. (This script also supports single machine training.)
+a.If you run on a cluster managed with slurm, you can use the script mim_slurm_train.sh. (This script also supports single machine training.)
 
 ```shell
 sh tools/mim_slurm_train.sh $PARTITION $TASK $CONFIG $WORK_DIR
+
+## mmcls as an example
+sh tools/mim_slurm_train.sh GVT mmcls configs/cls/linear_probe/mnb4_Up-E-C_pretrain_flowers_10p.py /path/to/your/project
 ```
+
 
 b.If you run on w/o slurm. (More details can be found in docs of openmim)
 
