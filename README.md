@@ -6,6 +6,10 @@
 * Face Detection and Depth Estimation is not provided for now, you may evaluate via official repo if needed.
 * Specifically, we use central_model.py in our repo to represent the implementation of Up-G models.
 
+  [🏡 Homepage](https://opengvlab.shlab.org.cn/home) |
+  [📘 Documentation](https://opengvlab.github.io/) |
+  [👀 Model Zoo](https://opengvlab.shlab.org.cn/models)
+
 ## Task Supported
 
 * [x] Object Classification
@@ -64,11 +68,42 @@ This section provide basic tutorials about the usage of GV-B.
 
 For each evaluation task, you can follow the official repo tutorial for data preparation.
 
-[mmclassification](https://github.com/open-mmlab/mmclassification/blob/master/docs/zh_CN/getting_started.md)
+```
+mmclassification (take flowers for example)
+├── data
+│   ├── flowers
+│   │   ├── train/
+│   │   ├── test/
+│   │   ├── train_meta.list
+│   │   ├── test_meta.list
+```
 
-[mmdetection](https://github.com/open-mmlab/mmdetection/blob/master/docs/zh_cn/1_exist_data_model.md)
+```plain
+mmdetection
+├── data
+│   ├── citypersons
+│   │   ├── annotations
+│   │   ├── leftImg8bit
+│   │   │   ├── train
+│   │   │   ├── val
+│   ├── VOCdevkit
+│   │   ├── VOC2007
+│   │   ├── VOC2012
+```
 
-[mmsegmentation](https://github.com/open-mmlab/mmsegmentation/blob/master/docs/zh_cn/dataset_prepare.md)
+```none
+mmsegmentation
+├── data
+│   ├── VOCdevkit
+│   │   ├── VOC2012
+│   │   │   ├── JPEGImages
+│   │   │   ├── SegmentationClass
+│   │   │   ├── ImageSets
+│   │   │   │   ├── Segmentation
+│   │   ├── VOCaug
+│   │   │   ├── dataset
+│   │   │   │   ├── cls
+```
 
 
 ## Model evaluation
@@ -98,7 +133,7 @@ PYTHONPATH='.':$PYTHONPATH mim train $TASK $CONFIG $WORK_DIR
 
 ## Detailed Tutorials
 
-Currently, we provide tutorials for users.
+Currently, we provide tutorials (mmclassification for example) for further development.
 
 - [add new modules](https://mmclassification.readthedocs.io/en/latest/tutorials/new_modules.html)
 - [add new dataset](https://mmclassification.readthedocs.io/en/latest/tutorials/new_dataset.html)
